@@ -1,0 +1,520 @@
+/* Custom Styles for Playfair Cipher Dashboard - Pastel Theme */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(135deg, #ffeef8 0%, #e0f4ff 50%, #fff5e6 100%);
+    background-attachment: fixed;
+}
+
+/* Override Tailwind background */
+.bg-gradient-to-br {
+    background: linear-gradient(135deg, #ffeef8 0%, #e0f4ff 50%, #fff5e6 100%) !important;
+    background-attachment: fixed;
+}
+
+/* Override text colors */
+.text-white {
+    color: #4a4a6a !important;
+}
+
+.text-slate-400 {
+    color: #8b8ba7 !important;
+}
+
+.text-slate-500 {
+    color: #9b9bb7 !important;
+}
+
+.text-slate-600 {
+    color: #6a6a8a !important;
+}
+
+/* Card Styles */
+.card {
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(255, 250, 245, 0.9));
+    border: 2px solid rgba(255, 192, 203, 0.3);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(255, 182, 193, 0.15);
+}
+
+.card:hover {
+    border-color: rgba(255, 182, 193, 0.5);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 48px rgba(255, 182, 193, 0.25);
+}
+
+.card-header {
+    padding: 1.5rem;
+    border-bottom: 2px solid rgba(255, 192, 203, 0.2);
+    background: linear-gradient(to right, rgba(255, 240, 245, 0.6), rgba(240, 248, 255, 0.6));
+}
+
+.card-header h2 {
+    color: #6b5b95;
+    font-weight: 600;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(to right, rgba(255, 240, 245, 0.95), rgba(240, 248, 255, 0.95)) !important;
+    border-bottom: 2px solid rgba(255, 192, 203, 0.3) !important;
+    backdrop-filter: blur(10px);
+}
+
+header h1 {
+    color: #6b5b95;
+}
+
+header p {
+    color: #a89cc8;
+}
+
+/* Logo/Icon Styles */
+header .bg-gradient-to-br {
+    background: linear-gradient(135deg, #ffb6d9 0%, #a6c8ff 100%) !important;
+}
+
+/* Button Styles */
+.btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #ffb6d9 0%, #b8a8e6 50%, #a6c8ff 100%);
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(255, 182, 217, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(255, 182, 217, 0.6);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-primary:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* History Button */
+#historyBtn {
+    background: linear-gradient(to right, rgba(255, 240, 245, 0.8), rgba(240, 248, 255, 0.8)) !important;
+    border: 2px solid rgba(255, 192, 203, 0.3);
+    color: #6b5b95 !important;
+}
+
+#historyBtn:hover {
+    background: linear-gradient(to right, rgba(255, 240, 245, 1), rgba(240, 248, 255, 1)) !important;
+    border-color: rgba(255, 192, 203, 0.5);
+}
+
+/* Mode Button Styles */
+.mode-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.7);
+    border: 2px solid rgba(255, 192, 203, 0.3);
+    border-radius: 1rem;
+    color: #8b8ba7;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(255, 192, 203, 0.1);
+}
+
+.mode-btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 192, 203, 0.5);
+    color: #6b5b95;
+}
+
+.mode-btn.active {
+    background: linear-gradient(135deg, rgba(255, 182, 217, 0.3), rgba(184, 168, 230, 0.3), rgba(166, 200, 255, 0.3));
+    border-color: #ffb6d9;
+    color: #6b5b95;
+    box-shadow: 0 4px 20px rgba(255, 182, 217, 0.3);
+}
+
+/* Input Styles */
+input, textarea {
+    background: rgba(255, 255, 255, 0.7) !important;
+    border: 2px solid rgba(255, 192, 203, 0.3) !important;
+    color: #4a4a6a !important;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #b8b8d0 !important;
+}
+
+input:focus, textarea:focus {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-color: #ffb6d9 !important;
+    box-shadow: 0 0 0 4px rgba(255, 182, 217, 0.15) !important;
+}
+
+/* Matrix Cell Animation */
+.matrix-cell {
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, rgba(255, 240, 245, 0.8), rgba(240, 248, 255, 0.8));
+    border: 2px solid rgba(255, 192, 203, 0.4);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: #6b5b95;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
+    box-shadow: 0 2px 8px rgba(255, 192, 203, 0.15);
+}
+
+.matrix-cell:hover {
+    background: linear-gradient(135deg, rgba(255, 182, 217, 0.4), rgba(184, 168, 230, 0.4));
+    border-color: #ffb6d9;
+    color: #6b5b95;
+    transform: scale(1.15);
+    box-shadow: 0 4px 16px rgba(255, 182, 217, 0.3);
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Pair Badge Styles */
+.pair-badge {
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, rgba(255, 240, 245, 0.8), rgba(240, 248, 255, 0.8));
+    border: 2px solid rgba(255, 192, 203, 0.4);
+    border-radius: 0.75rem;
+    color: #6b5b95;
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+    animation: slideIn 0.3s ease forwards;
+    opacity: 0;
+    transform: translateY(10px);
+    box-shadow: 0 2px 10px rgba(255, 192, 203, 0.2);
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Output Text Styling */
+#outputText {
+    background: linear-gradient(135deg, rgba(255, 240, 245, 0.6), rgba(240, 248, 255, 0.6)) !important;
+    border: 2px solid rgba(255, 192, 203, 0.3) !important;
+    color: #8b5a9f !important;
+}
+
+/* Copy Button */
+#copyBtn {
+    color: #b68fc8 !important;
+}
+
+#copyBtn:hover {
+    color: #9370a8 !important;
+}
+
+/* History Item Styles */
+.history-item {
+    padding: 1rem;
+    background: linear-gradient(to right, rgba(255, 240, 245, 0.6), rgba(240, 248, 255, 0.6));
+    border: 2px solid rgba(255, 192, 203, 0.3);
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+    animation: slideDown 0.3s ease forwards;
+    box-shadow: 0 2px 12px rgba(255, 192, 203, 0.15);
+}
+
+.history-item:hover {
+    background: linear-gradient(to right, rgba(255, 240, 245, 0.9), rgba(240, 248, 255, 0.9));
+    border-color: rgba(255, 192, 203, 0.5);
+    transform: translateX(4px);
+    box-shadow: 0 4px 20px rgba(255, 192, 203, 0.25);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* History Type Badges */
+.bg-cyan-500\/20 {
+    background: rgba(166, 200, 255, 0.3) !important;
+}
+
+.text-cyan-400 {
+    color: #7fa8d9 !important;
+}
+
+.bg-purple-500\/20 {
+    background: rgba(184, 168, 230, 0.3) !important;
+}
+
+.text-purple-400 {
+    color: #a89cc8 !important;
+}
+
+/* Modal Styles */
+#historyModal {
+    background: rgba(255, 240, 255, 0.4) !important;
+}
+
+#historyModal > div {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 250, 245, 0.95));
+    border: 2px solid rgba(255, 192, 203, 0.4);
+    box-shadow: 0 20px 60px rgba(255, 182, 193, 0.3);
+}
+
+#historyModal .border-slate-700 {
+    border-color: rgba(255, 192, 203, 0.3) !important;
+}
+
+/* Clear History Button */
+#clearHistoryBtn {
+    background: rgba(255, 182, 193, 0.2) !important;
+    border: 2px solid rgba(255, 140, 160, 0.3);
+    color: #d97b93 !important;
+}
+
+#clearHistoryBtn:hover {
+    background: rgba(255, 182, 193, 0.3) !important;
+    border-color: rgba(255, 140, 160, 0.5);
+}
+
+/* Close Button */
+#closeHistoryBtn {
+    background: linear-gradient(to right, rgba(255, 240, 245, 0.8), rgba(240, 248, 255, 0.8)) !important;
+    border: 2px solid rgba(255, 192, 203, 0.3);
+    color: #6b5b95 !important;
+}
+
+#closeHistoryBtn:hover {
+    background: linear-gradient(to right, rgba(255, 240, 245, 1), rgba(240, 248, 255, 1)) !important;
+    border-color: rgba(255, 192, 203, 0.5);
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 240, 245, 0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #ffb6d9, #b8a8e6);
+    border-radius: 10px;
+    border: 2px solid rgba(255, 240, 245, 0.3);
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #ffa0c9, #a898d6);
+}
+
+/* Modal Animation */
+.modal-enter {
+    animation: modalFadeIn 0.3s ease forwards;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Notification Styles */
+.notification {
+    position: fixed;
+    top: 5rem;
+    right: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, #ffb6d9, #b8a8e6, #a6c8ff);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 1rem;
+    box-shadow: 0 10px 40px rgba(255, 182, 193, 0.4);
+    z-index: 100;
+    animation: notificationSlide 0.3s ease forwards;
+    backdrop-filter: blur(10px);
+}
+
+@keyframes notificationSlide {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Loading Spinner */
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* SVG Icon Colors */
+svg {
+    color: inherit;
+}
+
+.text-cyan-400 svg {
+    color: #7fa8d9;
+}
+
+header svg {
+    color: white;
+}
+
+/* Empty State */
+.text-center svg {
+    color: #d4b5d4;
+}
+
+/* Info Card Text */
+.card p, .card li {
+    color: #7a7a9a;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .card-header {
+        padding: 1rem;
+    }
+    
+    .card-header h2 {
+        font-size: 1rem;
+    }
+    
+    .mode-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+    
+    .matrix-cell {
+        font-size: 0.875rem;
+    }
+    
+    body {
+        font-size: 0.9rem;
+    }
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.slide-up {
+    animation: slideUp 0.3s ease forwards;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Additional Pastel Touches */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ffb6d9, #b8a8e6, #a6c8ff, #ffe9b8);
+    border-radius: 1.5rem 1.5rem 0 0;
+}
+
+/* Smooth Transitions */
+* {
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
